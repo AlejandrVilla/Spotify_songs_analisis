@@ -10,14 +10,16 @@ def run():
     print("Promedio de energia según el género:")
     for genero in song_avrg_energy:
         print(genero, round(song_avrg_energy[genero], 2), sep=": ")
-    charts.generate_bar_chart(song_avrg_energy.keys(), song_avrg_energy.values())
+    values = [round(value,2) for value in song_avrg_energy.values()]
+    charts.generate_bar_chart(song_avrg_energy.keys(), values)
 
     # 5 artists with greatest popularity
     avrg_popularity = utils.get_popularity_artist(data)
     print("\n5 artistas con mayor popularidad:")
     for artist in avrg_popularity:
         print(artist, round(avrg_popularity[artist], 2), sep=": ")
-    charts.generate_bar_chart(avrg_popularity.keys(), avrg_popularity.values())
+    values = [round(value,2) for value in avrg_popularity.values()]
+    charts.generate_bar_chart(avrg_popularity.keys(), values)
 
     # albums for each artist
     album_artist = utils.get_album_artist(data)
