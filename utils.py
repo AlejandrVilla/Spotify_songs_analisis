@@ -17,14 +17,6 @@ def get_gen_average_energy(song_dict):
         ac_gen[genero] = ac_gen[genero] + 1
         cont_gen[genero] = cont_gen[genero] + float(song["energy"])
 
-    # for genero in gen:
-    #     for song in song_dict:
-    #         if song["playlist_genre"] == genero:
-    #             ac_gen[genero] = ac_gen[genero]+1
-    #             cont_gen[genero] = cont_gen[genero] + float(song["energy"])
-
-    # print(ac_gen)
-    # print(cont_gen)
     # get the average enery for each genre
     song_avrg_energy = { genero:cont_gen[genero]/ac_gen[genero] for genero in gen }
     return song_avrg_energy    
